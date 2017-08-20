@@ -1,5 +1,6 @@
 {
   "name": "openFlairApp",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "c8d383e1",
+  "type": "ionic-angular",
+  "integrations": {}
 }

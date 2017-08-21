@@ -15,9 +15,39 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let element of news">
-      <h2>{{element.blog_post.title}}</h2>
-      <h3>{{element.blog_post.excerpt}}</h3>
-    </ion-item>
+    <ion-card *ngFor="let element of news">
+      <ion-card-content>
+        <ion-card-title>
+          {{element.blog_post.title}}
+        </ion-card-title>
+        <p>
+          {{element.blog_post.sub_title}}
+        </p>
+      </ion-card-content>
+      <ion-row>
+        <ion-col center text-center>
+          <ion-note>
+            {{element.blog_post.updated_at}}
+          </ion-note>
+        </ion-col>
+        <ion-col>
+          <a href="http://open-flair.de/blog/{{element.blog_post.id}}">
+            <button ion-button icon-left clear small>
+              <ion-icon name="share"></ion-icon><!-- heart-outline -->
+              <div>Teilen</div>
+            </button>
+          </a>
+        </ion-col>
+        <ion-col>
+          <a href="http://open-flair.de/blog/{{element.blog_post.id}}">
+            <button ion-button icon-left clear small>
+              <ion-icon name="thump-up"></ion-icon><!-- heart-outline -->
+              <div>Weiterlesen</div>
+            </button>
+            </a>
+        </ion-col>
+
+      </ion-row>
+    </ion-card>
   </ion-list>
 </ion-content>

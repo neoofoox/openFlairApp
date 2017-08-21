@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { OpenFlairActServiceProvider } from '../../providers/open-flair-act-service/open-flair-act-service';
 
 /**

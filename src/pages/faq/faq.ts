@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { OpenFlairFaqServiceProvider } from '../../providers/open-flair-faq-service/open-flair-faq-service';
 /**
  * Generated class for the FaqPage page.

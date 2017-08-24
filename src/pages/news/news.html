@@ -25,15 +25,17 @@
         </p>
       </ion-card-content>
       <ion-row>
-        <ion-col center text-center>
-          <ion-note>
-            {{element.blog_post.updated_at}}
-          </ion-note>
+        <ion-col>
+          <div id="newsTime">
+            <ion-note>
+              {{element.blog_post.updated_at}}
+            </ion-note>
+            </div>
         </ion-col>
         <ion-col>
           <a href="http://open-flair.de/blog/{{element.blog_post.id}}">
             <button ion-button icon-left clear small>
-              <ion-icon name="share"></ion-icon><!-- heart-outline -->
+              <ion-icon name="share"></ion-icon>
               <div>Teilen</div>
             </button>
           </a>
@@ -41,7 +43,7 @@
         <ion-col>
           <a href="http://open-flair.de/blog/{{element.blog_post.id}}">
             <button ion-button icon-left clear small>
-              <ion-icon name="thump-up"></ion-icon><!-- heart-outline -->
+              <ion-icon name="thump-up"></ion-icon>
               <div>Weiterlesen</div>
             </button>
             </a>

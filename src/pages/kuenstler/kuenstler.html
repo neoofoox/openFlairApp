@@ -16,8 +16,11 @@
   <ion-list>
     <ng-template ngFor let-element [ngForOf]="acts">
       <ion-card *ngIf="element.act.category == 1">
-        <div *ngIf="element.act.image_attachment_urls[0] != undefined">
+        <div class="artist-image" *ngIf="element.act.image_attachment_urls[0] != undefined">
           <img height="400px" src="http://open-flair.de{{element.act.image_attachment_urls[0].large}}" />
+        </div>
+        <div class="artist-image" *ngIf="element.act.image_attachment_urls[0] == undefined">
+          <img height="400px" src="/assets/images/template.jpg" />
         </div>
         <ion-card-content>
           <ion-card-title>

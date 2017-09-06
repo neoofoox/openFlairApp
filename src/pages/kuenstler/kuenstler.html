@@ -14,10 +14,7 @@
 
 <ion-content padding>
   <ion-list>
-    <!--<ion-item >-->
-    <!--<h2>{{element.act.name}}</h2>-->
     <ng-template ngFor let-element [ngForOf]="acts">
-      <!-- <ion-card *ngFor="let element of acts" > -->
       <ion-card *ngIf="element.act.category == 1">
         <div *ngIf="element.act.image_attachment_urls[0] != undefined">
           <img height="400px" src="http://open-flair.de{{element.act.image_attachment_urls[0].large}}" />
@@ -27,34 +24,33 @@
             {{element.act.name}}
           </ion-card-title>
           <p>
-            {{element.act.description}}
+            {{(element.act.description | slice:0:150) + (element.act.description.length > 100 ? '...' : '')}}
           </p>
         </ion-card-content>
         <ion-row>
           <ion-col>
             <button ion-button icon-left clear small>
-              <ion-icon name="heart-outline"></ion-icon><!-- heart-outline -->
+              <ion-icon name="heart-outline"></ion-icon>
               <div>Favorit</div>
             </button>
           </ion-col>
           <ion-col>
             <a href="{{element.act.homepage}}">
               <button ion-button icon-left clear small>
-                <ion-icon name="link"></ion-icon><!-- heart-outline -->
+                <ion-icon name="link"></ion-icon>
                 <div>Webseite</div>
               </button>
             </a>
           </ion-col>
-          <ion-col center text-center>
+          <!--<ion-col center text-center>
             <a href=""><button ion-button icon-left clear small>
-              <ion-icon name="paper"></ion-icon><!-- heart-outline -->
+              <ion-icon name="paper"></ion-icon>
                 <div>weiterlesen</div>
               </button>
             </a>
-          </ion-col>
+          </ion-col>-->
         </ion-row>
       </ion-card>
     </ng-template>
-    <!--</ion-item>-->
   </ion-list>
 </ion-content>

@@ -20,18 +20,18 @@
         <ion-card-title>
           {{element.blog_post.title}}
         </ion-card-title>
+        <div id="newsTime">
+          <ion-note>
+            <!--TODO: methode schreiben, die das Datum umwandelt -->
+            {{(element.blog_post.updated_at | slice:8:10) +'.'+ (element.blog_post.updated_at | slice:5:7) + '.' +  (element.blog_post.updated_at | slice:0:4) +' '+ (element.blog_post.updated_at | slice:11:19)}}
+          </ion-note>
+          </div>
         <p>
           {{element.blog_post.sub_title}}
         </p>
+        <div [innerHTML]="element.blog_post.excerpt"></div>
       </ion-card-content>
       <ion-row>
-        <ion-col>
-          <div id="newsTime">
-            <ion-note>
-              {{element.blog_post.updated_at}}
-            </ion-note>
-            </div>
-        </ion-col>
         <ion-col>
           <a href="http://open-flair.de/blog/{{element.blog_post.id}}">
             <button ion-button icon-left clear small>
@@ -48,7 +48,6 @@
             </button>
             </a>
         </ion-col>
-
       </ion-row>
     </ion-card>
   </ion-list>

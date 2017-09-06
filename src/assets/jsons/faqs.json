@@ -1,0 +1,114 @@
+[
+    {
+        "faq": {
+            "id": 1,
+            "question": "Was ist das Open Flair?",
+            "answer": "Ein Festival, dass sich seit 1985 immer mehr etabliert und mittlerweile einen jour fix an jedem zweiten August Wochenende im Jahr einnimmt. Mit einer Mischung aus Musik- Kleinkunst- und Kinderprogramm hat das Open Flair Festival für jeden Geschmack und jede Altersgruppe etwas zu bieten und zieht bis zu 15.000 Besuchern an."
+        }
+    },
+    {
+        "faq": {
+            "id": 2,
+            "question": "Ich bin noch unter 18, wie sind die Spielregeln?",
+            "answer": "Die gesetzlichen Bestimmungen zum Jugendschutz gelten auf dem gesamten Festivalgelände und Campingplatz. Kinder und Jugendliche bis 15 Jahren dürfen das Festival nur in Begleitung eines Sorgeberechtigten besuchen. 16- bis 18-Jährige müssen das Festival um 24.00 Uhr verlassen. Dies gilt nicht, wenn sie in Begleitung einer volljährigen Begleitperson sind, die eine von den Eltern ausgestellte Erziehungsberechtigung für die Dauer der Veranstaltung besitzen.<br />\nEin schriftlicher Nachweis hierüber ist mitzuführen. Ein entsprechendes Formular für Festivalgelände und Campingplatz ist hier zu finden <a href=\"http://open-flair.de/data/JugendschutzVereinbarung.pdf\">Download</a>"
+        }
+    },
+    {
+        "faq": {
+            "id": 4,
+            "question": "Kann ich Zelten?",
+            "answer": "<a href=\"http://open-flair.de/camping\">Hier</a> findest Du alles zum Thema Camping auf dem Open Flair."
+        }
+    },
+    {
+        "faq": {
+            "id": 6,
+            "question": "Was darf ich (nicht) mit aufs Gelände nehmen?",
+            "answer": "Verboten sind natürlich alle gefährlichen Gegenstände. Dazu gehören:<br />\nWaffen, Messer, Glasflaschen, Dosen, Regenschirme, Selfie-Sticks etc.</p>\n<p>Getränke dürfen bis zu einem Liter/Person im Tetra-Pack (ohne Schraubverschluss) mitgebracht werden.</p>\n<p>Klassische Nietengürtel mit flachen Pyramiden sind für uns <span class=\"caps\">KEIN</span> Problem, alles andere lasst einfach zu Hause. Das erspart Stress und Diskussionen."
+        }
+    },
+    {
+        "faq": {
+            "id": 7,
+            "question": "Wie funktioniert der Einlass?",
+            "answer": "Für das Betreten des Festivalgeländes am Werdchen (und der anderen Veranstaltungsorte wie Seebühne, E-Werk, Kleinkunstzelt etc.) ist ein am Handgelenk korrekt angelegtes sogenanntes Festivalbändchen Voraussetzung.</p>\n<p>Es gibt drei Bändchenstationen, an denen Inhaber von Kombi-, Dauer- oder Tageskarten Festivalbändchen bekommen. Die folgende Tabelle gibt eine Übersicht über die Öffnungszeiten:</p>\n<table class=\"xtable\">\n<thead>\n<tr>\n      <th></th>\n      <th>Station Werdchen</th>\n      <th>Station Campingplatz Ost (Brückenstraße)</th>\n      <th>Station Campingplatz West</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n      <th>Dienstag</th>\n      <td>-</td>\n      <td colspan=\"2\">12:00 &#8211; 24:00 Uhr</td>\n</tr>\n<tr>\n      <th>Mittwoch</th>\n      <td>-</td>\n      <td colspan=\"2\">9:30 &#8211; 24:00 Uhr</td>\n</tr>\n<tr>\n      <th>Donnerstag</th>\n      <td>-</td>\n      <td colspan=\"2\">9:30 &#8211; 24:00 Uhr</td>\n</tr>\n<tr>\n      <th>Freitag</th>\n      <td>10:00 Uhr bis Programmende</td>\n      <td colspan=\"2\">9:30 &#8211; 24:00 Uhr</td>\n</tr>\n<tr>\n      <th>Samstag</th>\n      <td>10:00 Uhr bis Programmende</td>\n      <td colspan=\"2\">9:30 &#8211; 13:00 Uhr</td>\n</tr>\n<tr>\n      <th>Sonntag</th>\n      <td>10:00 Uhr bis Programmende</td>\n      <td colspan=\"2\">-</td>\n</tr>\n</tbody>\n</table>\n<p>Das Festivalbändchen bekommen Besucher, die Campen, am einfachsten bei den Bändchenstationen auf dem Campingplatz. Alle Infos zum Thema Camping / Camping-Anreise und Camping-Check-In findet Ihr hier [http://open-flair.de/camping](http://open-flair.de/camping)</p>\n<p>Besucher mit Dauer- oder Tageskarten bekommen das Bändchen an der Bändchenstation Werdchen neben dem Eingang zum Hauptfestivalgelände. Bändchen für Dauer- und Tageskarten sind ebenfalls an den Bändchenstationen am Campingplatz zu bekommen. In diesem Fall nutzen Sie am besten die Station Campingplatz Ost in der Brückenstraße.</p>\n<p>Es ist zu beachten, dass nur korrekt am Handgelenk angelegte Festivalbändchen gültig sind. Abgeschnittene oder anderweitig beschädigte Festivalbändchen sind ungültig, berechtigen nicht mehr zum Einlass und werden von uns auch nicht ersetzt. Das Festivalbändchen ist nicht übertragbar."
+        }
+    },
+    {
+        "faq": {
+            "id": 8,
+            "question": "Wie ist das mit Fotografieren oder Filmen?",
+            "answer": "Keiner wird Euch verbieten, mit Eurer kleinen Digi-Cam Eure Flair-Erlebnisse einzufangen. Profigeräte sind allerdings nicht erlaubt und das Photografieren damit nur den Pressevertretern mit entsprechender Akkreditierung vorbehalten"
+        }
+    },
+    {
+        "faq": {
+            "id": 9,
+            "question": "Gibt es eine Möglichkeit einzukaufen/Geld abzuheben?",
+            "answer": "Der Veranstaltungsort ist keine 5 Minuten von der Eschweger Innenstadt entfernt. Hier findet Ihr fast jede Bank und jede Art von Geschäft. Bierkästen müsst Ihr also auch nicht auf die lange Reise mitnehmen :)"
+        }
+    },
+    {
+        "faq": {
+            "id": 10,
+            "question": "Was gibt es auf dem Festival zu Essen?",
+            "answer": "Neben den typischen Pommes- und Pizzabuden gibt es noch viele Stände mit deutschen und ausländischen Spezialitäten. Es ist immer traurig, wenn das Festival rum ist, bevor man alle Stände durchprobiert hat."
+        }
+    },
+    {
+        "faq": {
+            "id": 11,
+            "question": "Ich habe eine Behinderung. Gibt es Hilfestellungen?",
+            "answer": "Für alle Personen mit Einschränkungen, die auf eine Hilfsperson angewiesen sind, bezahlt die Hilfsperson keinen Eintritt, muss aber beim Umlegen des Festivalbändchens dabei sein. Gegebenenfalls muss dieser Bedarf vor Ort nachgewiesen werden.<br />\nFür Rolli-Fahrer gibt es ein Podest, für eine gute Sicht auf die HR3- und die Freibühne."
+        }
+    },
+    {
+        "faq": {
+            "id": 12,
+            "question": "Was ist mit Hunden?",
+            "answer": "Es dürfen keine Hunde aufs Festivalgeläde. Es gibt da auch keine &#8220;Aber er ist doch ganz brav&#8221;-Kompromisse.<br />\nAuf dem Zeltplatz sind Hunde erlaubt, insofern diese an der Leine geführt werden. Hier gelten ebenfalls keinerlei Ausnahmen. Wir bitten darauf zu verzichten Eure liebsten Vierbeiner ins Auto zu verfrachten, da es für sie dort lebensgefährlich heiß werden kann."
+        }
+    },
+    {
+        "faq": {
+            "id": 13,
+            "question": "Wer macht das Open Flair?",
+            "answer": "Das Festival wird vom Arbeitskreis Open Flair e.V., einem gemeinnützigen Verein, auf Non-Profit-Basis organisiert. Der Vorstand des Vereins sowie eine große Anzahl an ehrenamtlichen Helfern organisieren, arrangieren und inszenieren über Monate hinweg um den Festivalbesuchern ein abwechslungsreiches Programm zu bieten."
+        }
+    },
+    {
+        "faq": {
+            "id": 14,
+            "question": "Kleinkunst?",
+            "answer": "Neben dem Musikprogramm bietet der Arbeitskreis Open-Flair seinem Publikum auch Kleinkunst. Das Kleinkunstzelt ist 756 m von den Musikbühnen entfernt&#8230; zu finden ist es im Schlosspark. <a href=\"http://maps.google.de/maps/ms?ie=UTF8&amp;hl=de&amp;msa=0&amp;ll=51.191649,10.057039&amp;spn=0.015909,0.019934&amp;t=h&amp;z=16&amp;msid=116750381026172846890.00044e73c5070d8fc750f\">Hier</a> findet ihr eine Übersichtskarte."
+        }
+    },
+    {
+        "faq": {
+            "id": 15,
+            "question": "Fragen während des Festivals",
+            "answer": "Auf dem Festivalgelände befindet sich ein Info-Point, bei dem man euch immer gerne weiterhilft wenn ihr Fragen habt. Zudem ist dies unser &#8220;Fundbüro&#8221;: gefundene Gegenstände sollten da abgegeben, Verlorene dort gesucht werden."
+        }
+    },
+    {
+        "faq": {
+            "id": 16,
+            "question": "Wie kann ich anreisen?",
+            "answer": "<strong>Besucher die Campen folgen bitte den Informationen unter <a href=\"http://open-flair.de/camping\">http://open-flair.de/camping</a></strong></p>\n<p>Anreise mit dem Auto: <br />\nAus Westen: A44 bis Ende fahren, sie mündet in der A7, Ausfahrt &#8220;Kassel Ost&#8221; abfahren, dann links auf die B7 in Richtung Eschwege (ca. 50 km). Aus Norden: A7 Richtung Süden, unmittelbar nach Göttingen Abfahrt &#8220;Autobahndreieck Drammetal&#8221; Richtung &#8220;Leipzig/Halle/Nordhausen&#8221;, dann im weiteren Verlauf auf der B27 in Richtung Eschwege fahren (ca. 50 km).<br />\nAus Süden: A5 oder A7 Richtung Norden, bei Kirchheim auf die A4 Richtung Eisenach, Ausfahrt &#8220;Bad Hersfeld&#8221; abfahren, dann auf der B27 Richtung Eschwege fahren (ca. 50 km).<br />\nAus Osten: A4 in westlicher Richtung, Ausfahrt &#8220;Eisenach&#8221; abfahren, dann auf der B7 in Richtung Eschwege fahren (ca.30 km).</p>\n<p>Bahn (und Bus):<br />\nMit dem Zug kannst Du bis Göttingen, Eichenberg oder Bebra fahren und dort auf die Regionalzüge der Linie R7 nach Eschwege umsteigen. Die Züge fahren etwa alle 30-90 Minuten nach Eschwege. Vom Bahnhof in Eschwege sind es zu Fuß noch rd. 1 km bis zum Festivalgelände. Vom Bahnhof (Bussteig 1) fahren aber auch die Stadtbusse bis zur Haltestelle Tränenbrücke am Festivalgelände (außer Samstagnachmittag und Sonntag).<br />\nInformationen und Fahrplanauskünfte für Zug und Bus in Nordhessen bekommst Du unter www.nvv.de , unter www.nwm-esw.de oder beim <span class=\"caps\">NVV</span>-Servicetelefon 0800-939-0800 (eine Gebühreneinheit aus dem Festnetz der Deutschen Telekom, Mobilfunkpreise Anbieterabhängig). Bundesweite Zugverbindungen nach Eschwege gibt es unter www.bahn.de , unter 11861 (kostenpflichtig) oder 08001507090 (kostenlos).</p>\n<p>Bus:<br />\nRegionalbusse im Nordhessischen Verkehrsbund (<span class=\"caps\">NVV</span>)-Fahrplanauskunft: www.nvv.de oder das Servicetelefon des <span class=\"caps\">NVV</span>: 0800-939-0800. Ankunft im Zentrum von Eschwege. (www.nvm-esw.de)"
+        }
+    },
+    {
+        "faq": {
+            "id": 17,
+            "question": "Kann ich beim Open Flair mitarbeiten?",
+            "answer": "Ja. Wir suchen immer freiwillige Helfer, die bereit sind mit anzupacken und mit uns das Festival zu stemmen. Das bedeutet natürlich auch Arbeit und weniger Feiern. Dafür haben wir auch hinter der Bühne Spaß.</p>\n<p>Für welche Bereiche wir noch Helfer suchen findest du <a href=\"http://open-flair.de/pages/jobs\">hier</a>"
+        }
+    },
+    {
+        "faq": {
+            "id": 18,
+            "question": "Gibt es Open Flair Apps?",
+            "answer": "Ja. Alle Infos dazu findet Ihr <a href=\"/pages/apps\">hier</a>"
+        }
+    }
+]

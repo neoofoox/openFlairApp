@@ -1,9 +1,19 @@
 page-kuenstler {
+    ion-title {
+        padding-top: 10px;
+        float:left;
+    }
     .artist-image {
         img {
-            display: block !important;
-            max-width: 100% !important;
-            height: auto !important;
+            display: block;
+            max-width: 100%;
+            height: auto;
         }
-    }   
+    }
+    ion-navbar{
+            button {
+                float:right;
+                padding-right: 15px;
+            }
+    }
 }

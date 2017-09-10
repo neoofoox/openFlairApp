@@ -33,12 +33,15 @@
             {{(element.act.description | slice:0:150) + (element.act.description.length > 100 ? '...' : '')}}
           </p>
         </ion-card-content>
+          <ion-list *ngFor="let gig of element.act.gigs | orderBy:['day_date', 'begin.integer_time']">
+            <button ion-item color="gigsBackground">
+              {{(gig.day_name | slice:0:2) + ". " + (gig.begin.integer_time | formatTimeHhmm) + " " + gig.stage_name}}
+            </button>
+          </ion-list>
         <ion-row>
           <ion-col>
             <button (click)="toggleFav(element.act)" ion-button icon-left clear small>
               <ion-icon [name]="isFav(element.act) ? 'heart' : 'heart-outline'" color="ofred"></ion-icon>
-              <!-- <ion-icon *ngIf="!isFav(element.act)" color="ofred" name="heart-outline" ></ion-icon>
-              <ion-icon *ngIf="isFav(element.act)" color="ofred" name="heart" ></ion-icon> -->
               <div>Favorit</div>
             </button>
           </ion-col>

@@ -22,8 +22,7 @@
         </ion-card-title>
         <div id="newsTime">
           <ion-note>
-            <!--TODO: methode schreiben, die das Datum umwandelt -->
-            {{(element.blog_post.updated_at | slice:8:10) +'.'+ (element.blog_post.updated_at | slice:5:7) + '.' +  (element.blog_post.updated_at | slice:0:4) +' '+ (element.blog_post.updated_at | slice:11:19)}}
+            {{(element.blog_post.updated_at | formatOfNewsDate)}}
           </ion-note>
           </div>
         <p>

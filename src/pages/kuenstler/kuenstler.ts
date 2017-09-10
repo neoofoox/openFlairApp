@@ -10,6 +10,7 @@ import { OpenFlairActServiceProvider } from '../../providers/open-flair-act-serv
  */
 declare var require: any;
 var loki = require('lokijs');
+var localforage = require('localforage');
 
 @Component({
   selector: 'page-kuenstler',
@@ -22,18 +23,18 @@ export class KuenstlerPage {
   favs: any;
   
   constructor(public navCtrl: NavController, public actService: OpenFlairActServiceProvider) {
+    this.loadPersistedData();
     this.loadActs();
     this.db = new loki('kuenstlerFavs');
     this.favs = this.db.addCollection('favs');    
   }
   toggleFav(kuenstler){
-    //TODO: add this artist to Favs or remove it when existing.
-    console.log("click");
     if(this.isFav(kuenstler)){
-      this.favs.remove({id: kuenstler.id, name: kuenstler.name});
+      this.favs.findAndRemove({id: kuenstler.id, name: kuenstler.name});
     } else {
       this.favs.insert({id: kuenstler.id, name: kuenstler.name});
     }
+    this.persistData();
     
   }
   loadActs(){
@@ -56,9 +57,48 @@ export class KuenstlerPage {
       this.onlyFavorites = true;
     }
   }
-
+  persistData(){
+    localforage.setItem('kuenstlerFavs', JSON.stringify(this.db)).then(function (value) {
+      //Speichern erfolgreich
+    }).catch(function(err) {
+      //Fehler beim Speichern
+    });
+  }
+  loadPersistedData(){
+    var me = this;
+    localforage.getItem('kuenstlerFavs').then(function(value) {
+      console.log('the full database has been retrieved');
+      me.db.loadJSON(value);
+      me.favs = me.db.getCollection('favs');
+    }).catch(function(err){
+      //Fehler beim laden der Daten
+    });
+  }
   convert2Array(val) {
     return Array.from(val);
+  }
+  stageColor(gig){
+    switch(gig.stage_name){
+      case "Seebühne":
+        return "stageSeebuehne";
+      case "hr3 Bühne":
+        return "stageHr3";
+      case "Freibühne":
+        return "stageFreibuehne";
+      case "E-Werk":
+      case "Elektrogarten":
+      case "Hofbühne":
+      case "Innenstadt":
+      case "Kleinkunstzelt":
+      case "OF-Spielfeld":
+      case "Schlossparkbühne":
+      case "Waldbühne":
+      case "Walkacts":
+      case "Weinzelt":
+      
+      default:
+      return "ofred";
+    }
   }
 
 }

@@ -12,6 +12,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { OrderByPipe } from '../pipes/order-by/order-by';
+import { FormatTimeHhmmPipe } from '../pipes/format-time-hhmm/format-time-hhmm';
+import { FormatOfNewsDatePipe } from '../pipes/format-of-news-date/format-of-news-date';
 import { OpenFlairActServiceProvider } from '../providers/open-flair-act-service/open-flair-act-service';
 import { OpenFlairNewsServiceProvider } from '../providers/open-flair-news-service/open-flair-news-service';
 import { OpenFlairFaqServiceProvider } from '../providers/open-flair-faq-service/open-flair-faq-service';
@@ -23,7 +26,10 @@ import { OpenFlairFaqServiceProvider } from '../providers/open-flair-faq-service
     ProgrammPage,
     KuenstlerPage,
     NewsPage,
-    TabsPage
+    TabsPage,
+    OrderByPipe,
+    FormatOfNewsDatePipe,
+    FormatTimeHhmmPipe
   ],
   imports: [
     BrowserModule,

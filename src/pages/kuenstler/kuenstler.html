@@ -15,6 +15,7 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-searchbar (ionInput)="searchKuenstler($event)"></ion-searchbar>
   <ion-list>
     <ng-template ngFor let-element [ngForOf]="acts">
       <ion-card *ngIf="element.act.category == 1 && (!isFiltered() || isFav(element.act))">

@@ -100,5 +100,16 @@ export class KuenstlerPage {
       return "ofred";
     }
   }
+  searchKuenstler(ev: any){
+    //FIXME: Removing characters won't show more Artists
+    let val = ev.target.value;
+    if(val && val.trim != ''){
+      this.acts = this.acts.filter((act) => {
+        return (act.act.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    } else {
+      this.loadActs();
+    }
+  }
 
 }

@@ -1,0 +1,35 @@
+<!--
+  Generated template for the BuehnenPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Bühnen</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding> 
+  <ion-list no-lines>
+    <ion-list-header no-lines>Seebühne</ion-list-header>
+    <ng-template ngFor let-gig [ngForOf]="seebuehne">
+        <ion-item>{{(gig.weekday | slice:0:2) + ". " + (gig.begin | formatTimeHhmm) + " " + gig.stage}}</ion-item>
+    </ng-template>
+    <ion-list-header no-lines>Freibühne</ion-list-header>
+    <ng-template ngFor let-gig [ngForOf]="freibuehne">
+        <ion-item>{{(gig.weekday | slice:0:2) + ". " + (gig.begin | formatTimeHhmm) + " " + gig.stage}}</ion-item>
+    </ng-template>
+    <ion-list-header no-lines>HR3</ion-list-header>
+    <ng-template ngFor let-gig [ngForOf]="hr3">
+        <ion-item>{{(gig.weekday | slice:0:2) + ". " + (gig.begin | formatTimeHhmm) + " " + gig.stage}}</ion-item>
+    </ng-template>
+    <ion-list-header no-lines>Other</ion-list-header>
+    <ng-template ngFor let-gig [ngForOf]="other">
+        <ion-item>{{(gig.weekday | slice:0:2) + ". " + (gig.begin | formatTimeHhmm) + " " + gig.stage}}</ion-item>
+    </ng-template>
+  </ion-list>
+</ion-content>

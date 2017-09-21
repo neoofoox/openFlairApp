@@ -9,7 +9,6 @@ import { ProgrammPage } from '../pages/programm/programm';
 import { FaqPage } from '../pages/faq/faq';
 import { NewsPage } from '../pages/news/news';
 import { TabsPage } from '../pages/tabs/tabs';
-import { BuehnenPage } from '../pages/buehnen/buehnen';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +23,6 @@ import { OpenFlairFaqServiceProvider } from '../providers/open-flair-faq-service
   declarations: [
     MyApp,
     FaqPage,
-    BuehnenPage,
     ProgrammPage,
     KuenstlerPage,
     NewsPage,
@@ -45,7 +43,6 @@ import { OpenFlairFaqServiceProvider } from '../providers/open-flair-faq-service
     ProgrammPage,
     KuenstlerPage,
     NewsPage,
-    BuehnenPage,
     TabsPage
   ],
   providers: [

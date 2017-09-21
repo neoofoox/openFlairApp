@@ -1,3 +1,26 @@
 page-buehnen {
+    .card {
+        width: calc(100% - 50px);
+        border-radius: 12px;
+        padding-left: 3px; 
+    }
+    .cardTime {
+        float:left; 
+        width: 50px;
+        .begin {
+            
+        }
+        .split {
+            margin: -4px 0 -3px 15px;
+        }
+        .end {
 
+        }
+    }
+    .cardArtist {
+
+    }
+    .cardStage {
+        display: none;
+    }
 }

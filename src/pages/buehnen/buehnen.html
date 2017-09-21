@@ -13,23 +13,26 @@
 </ion-header>
 
 
-<ion-content padding> 
+<ion-content padding>
   <ion-list no-lines>
-    <ion-list-header no-lines>Seebühne</ion-list-header>
-    <ng-template ngFor let-gig [ngForOf]="seebuehne">
-        <ion-item>{{(gig.weekday | slice:0:2) + ". " + (gig.begin | formatTimeHhmm) + " " + gig.stage}}</ion-item>
-    </ng-template>
-    <ion-list-header no-lines>Freibühne</ion-list-header>
-    <ng-template ngFor let-gig [ngForOf]="freibuehne">
-        <ion-item>{{(gig.weekday | slice:0:2) + ". " + (gig.begin | formatTimeHhmm) + " " + gig.stage}}</ion-item>
-    </ng-template>
-    <ion-list-header no-lines>HR3</ion-list-header>
-    <ng-template ngFor let-gig [ngForOf]="hr3">
-        <ion-item>{{(gig.weekday | slice:0:2) + ". " + (gig.begin | formatTimeHhmm) + " " + gig.stage}}</ion-item>
-    </ng-template>
-    <ion-list-header no-lines>Other</ion-list-header>
-    <ng-template ngFor let-gig [ngForOf]="other">
-        <ion-item>{{(gig.weekday | slice:0:2) + ". " + (gig.begin | formatTimeHhmm) + " " + gig.stage}}</ion-item>
-    </ng-template>
+    <!-- TODO: Create a Template to use for the different Days -->
+    <ion-list-header no-lines>Freitag</ion-list-header>
+    <ion-list *ngFor="let gig of freitag">
+      <div class="cardTime">
+        <div class="begin">{{(gig.begin | formatTimeHhmm)}}</div>
+        <div class="split">-</div>
+        <div class="end">{{(gig.end | formatTimeHhmm)}}</div>
+      </div>
+      <ion-card [color]="stageColor(gig.stage)">
+        <ion-card-content>
+          <div class="cardArtist">{{gig.artist}}</div>
+          <div class="cardStage">{{gig.stage}}</div>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    
+    
+
   </ion-list>
 </ion-content>

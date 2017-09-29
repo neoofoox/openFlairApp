@@ -19,6 +19,7 @@ var localforage = require('localforage');
 export class KuenstlerPage {
   onlyFavorites: boolean = false;
   public acts: any;
+  public preFilteredActs: any;
   db: any;
   favs: any;
   
@@ -39,6 +40,7 @@ export class KuenstlerPage {
   }
   loadActs(){
     this.actService.load().then(data => {
+      this.preFilteredActs = data;
       this.acts = data;
     });
   }
@@ -101,14 +103,13 @@ export class KuenstlerPage {
     }
   }
   searchKuenstler(ev: any){
-    //FIXME: Removing characters won't show more Artists
     let val = ev.target.value;
     if(val && val.trim != ''){
-      this.acts = this.acts.filter((act) => {
+      this.acts = this.preFilteredActs.filter((act) => {
         return (act.act.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     } else {
-      this.loadActs();
+      this.acts = this.preFilteredActs;
     }
   }
 

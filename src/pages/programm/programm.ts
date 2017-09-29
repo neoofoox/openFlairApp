@@ -43,6 +43,7 @@ export class ProgrammPage {
           let gigToAdd: Gig = new Gig();
           if ( begin != undefined && weekday != undefined 
             && stage != undefined && artist != undefined) {
+            if(stage == "hr3 Bühne" || stage == "Seebühne" || stage == "Freibühne"){
               gigToAdd.artist = artist;
               gigToAdd.begin = begin;
               gigToAdd.end = end;
@@ -57,7 +58,8 @@ export class ProgrammPage {
                   this.donnerstag.push(gigToAdd);
                   break;
                 case "Freitag":
-                  this.freitag.push(gigToAdd);
+                  
+                    this.freitag.push(gigToAdd);
                   break;
                 case "Samstag":
                   this.samstag.push(gigToAdd);
@@ -67,6 +69,7 @@ export class ProgrammPage {
                   break;
               }
             }
+          }
         });
         this.mittwoch.sort(this.compare);
         this.donnerstag.sort(this.compare);

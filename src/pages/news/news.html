@@ -12,41 +12,39 @@
   </ion-navbar>
 
 </ion-header>
-<ion-content padding>
-  <ion-list>
-    <ion-card *ngFor="let element of news">
-      <ion-card-content>
-        <ion-card-title>
-          {{element.blog_post.title}}
-        </ion-card-title>
-        <div id="newsTime">
-          <ion-note>
-            {{(element.blog_post.updated_at | formatOfNewsDate)}}
-          </ion-note>
-          </div>
-        <p>
-          {{element.blog_post.sub_title}}
-        </p>
-        <div [innerHTML]="element.blog_post.excerpt"></div>
-      </ion-card-content>
-      <ion-row>
-        <ion-col>
-          <a href="http://open-flair.de/blog/{{element.blog_post.id}}">
-            <button ion-button icon-left clear small>
-              <ion-icon name="share"></ion-icon>
-              <div>Teilen</div>
-            </button>
+<ion-content>
+  <ion-card *ngFor="let element of news">
+    <ion-card-content>
+      <ion-card-title>
+        {{element.blog_post.title}}
+      </ion-card-title>
+      <div id="newsTime">
+        <ion-note>
+          {{(element.blog_post.updated_at | formatOfNewsDate)}}
+        </ion-note>
+        </div>
+      <p>
+        {{element.blog_post.sub_title}}
+      </p>
+      <div [innerHTML]="element.blog_post.excerpt"></div>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <a href="http://open-flair.de/blog/{{element.blog_post.id}}">
+          <button ion-button icon-left clear small>
+            <ion-icon name="share"></ion-icon>
+            <div>Teilen</div>
+          </button>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a href="http://open-flair.de/blog/{{element.blog_post.id}}">
+          <button ion-button icon-left clear small>
+            <ion-icon name="thump-up"></ion-icon>
+            <div>Weiterlesen</div>
+          </button>
           </a>
-        </ion-col>
-        <ion-col>
-          <a href="http://open-flair.de/blog/{{element.blog_post.id}}">
-            <button ion-button icon-left clear small>
-              <ion-icon name="thump-up"></ion-icon>
-              <div>Weiterlesen</div>
-            </button>
-            </a>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-  </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>

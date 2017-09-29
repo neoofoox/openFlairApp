@@ -14,13 +14,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-searchbar (ionInput)="searchKuenstler($event)"></ion-searchbar>
-  <ion-list>
     <ng-template ngFor let-element [ngForOf]="acts">
       <ion-card *ngIf="element.act.category == 1 && (!isFiltered() || isFav(element.act))">
         <div class="artist-image" *ngIf="element.act.image_attachment_urls[0] != undefined">
-          <img cache=true src="http://open-flair.de{{element.act.image_attachment_urls[0].large}}" />
+          <img cache=true src="http://open-flair.de{{element.act.image_attachment_urls[0].medium}}" />
         </div>
         <!-- FIXME: handle .tiff files e.g: No Faces -->
         <div class="artist-image" *ngIf="element.act.image_attachment_urls[0] == undefined">
@@ -57,5 +56,4 @@
         </ion-row>
       </ion-card>
     </ng-template>
-  </ion-list>
 </ion-content>

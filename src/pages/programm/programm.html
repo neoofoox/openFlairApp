@@ -12,21 +12,89 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list no-lines>
+  <ion-segment [(ngModel)]="tag">
+    <ion-segment-button value="Mittwoch">Mi</ion-segment-button>
+    <ion-segment-button value="Donnerstag">Do</ion-segment-button>
+    <ion-segment-button value="Freitag">Fr</ion-segment-button>
+    <ion-segment-button value="Samstag">Sa</ion-segment-button>
+    <ion-segment-button value="Sonntag">So</ion-segment-button>
+  </ion-segment>
     <!-- TODO: Create a Template to use for the different Days -->
-    <ion-list-header no-lines>Freitag</ion-list-header>
-    <ion-list *ngFor="let gig of freitag">
-      <div class="cardTime">
-        <div class="begin">{{(gig.begin | formatTimeHhmm)}}</div>
-        <div class="split">-</div>
-        <div class="end">{{(gig.end | formatTimeHhmm)}}</div>
-      </div>
-      <ion-card [color]="stageColor(gig.stage)">
-        <ion-card-content>
-          <div class="cardArtist">{{gig.artist}}</div>
-          <div class="cardStage">{{gig.stage}}</div>
-        </ion-card-content>
-      </ion-card>
+  <div [ngSwitch]="tag">          
+    <ion-list *ngSwitchCase="'Mittwoch'" >
+      <ion-list *ngFor="let gig of mittwoch" no-lines>
+        <div class="cardTime">
+          <div class="begin">{{(gig.begin | formatTimeHhmm)}}</div>
+          <div class="split">-</div>
+          <div class="end">{{(gig.end | formatTimeHhmm)}}</div>
+        </div>
+        <ion-card [color]="stageColor(gig.stage)">
+          <ion-card-content>
+            <div class="cardArtist">{{gig.artist}} - {{gig.stage}}</div>
+            <div class="cardStage">{{gig.stage}}</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
     </ion-list>
-  </ion-list>
+    <ion-list *ngSwitchCase="'Donnerstag'" >
+      <ion-list *ngFor="let gig of donnerstag" no-lines>
+        <div class="cardTime">
+          <div class="begin">{{(gig.begin | formatTimeHhmm)}}</div>
+          <div class="split">-</div>
+          <div class="end">{{(gig.end | formatTimeHhmm)}}</div>
+        </div>
+        <ion-card [color]="stageColor(gig.stage)">
+          <ion-card-content>
+            <div class="cardArtist">{{gig.artist}} - {{gig.stage}}</div>
+            <div class="cardStage">{{gig.stage}}</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </ion-list>
+    <ion-list *ngSwitchCase="'Freitag'" >
+      <ion-list *ngFor="let gig of freitag" no-lines>
+        <div class="cardTime">
+          <div class="begin">{{(gig.begin | formatTimeHhmm)}}</div>
+          <div class="split">-</div>
+          <div class="end">{{(gig.end | formatTimeHhmm)}}</div>
+        </div>
+        <ion-card [color]="stageColor(gig.stage)">
+          <ion-card-content>
+            <div class="cardArtist">{{gig.artist}} - {{gig.stage}}</div>
+            <div class="cardStage">{{gig.stage}}</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </ion-list>
+    <ion-list *ngSwitchCase="'Samstag'" >
+      <ion-list *ngFor="let gig of samstag" no-lines>
+        <div class="cardTime">
+          <div class="begin">{{(gig.begin | formatTimeHhmm)}}</div>
+          <div class="split">-</div>
+          <div class="end">{{(gig.end | formatTimeHhmm)}}</div>
+        </div>
+        <ion-card [color]="stageColor(gig.stage)">
+          <ion-card-content>
+            <div class="cardArtist">{{gig.artist}} - {{gig.stage}}</div>
+            <div class="cardStage">{{gig.stage}}</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </ion-list>
+    <ion-list *ngSwitchCase="'Sonntag'" >
+      <ion-list *ngFor="let gig of sonntag" no-lines>
+        <div class="cardTime">
+          <div class="begin">{{(gig.begin | formatTimeHhmm)}}</div>
+          <div class="split">-</div>
+          <div class="end">{{(gig.end | formatTimeHhmm)}}</div>
+        </div>
+        <ion-card [color]="stageColor(gig.stage)">
+          <ion-card-content>
+            <div class="cardArtist">{{gig.artist}} - {{gig.stage}}</div>
+            <div class="cardStage">{{gig.stage}}</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </ion-list>
+  </div>
 </ion-content>

@@ -13,7 +13,7 @@ import { OpenFlairFaqServiceProvider } from '../../providers/open-flair-faq-serv
   templateUrl: 'faq.html',
 })
 export class FaqPage {
-
+  public answerToShow: any;
   public faqs: any;
   constructor(public navCtrl: NavController, public faqService: OpenFlairFaqServiceProvider) {
     this.loadFaqs();
@@ -23,6 +23,14 @@ export class FaqPage {
     this.faqService.load().then(data => {
       this.faqs = data;
     });
+  }
+
+  showAnswer(faq : any){
+    if(this.answerToShow == faq.id){
+      this.answerToShow = -1;
+    } else {
+      this.answerToShow = faq.id;
+    }
   }
 
 }

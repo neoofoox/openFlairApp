@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
 import { OpenFlairActServiceProvider } from '../../providers/open-flair-act-service/open-flair-act-service';
 
 /**
@@ -23,7 +24,7 @@ export class KuenstlerPage {
   db: any;
   favs: any;
   
-  constructor(public navCtrl: NavController, public actService: OpenFlairActServiceProvider) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public actService: OpenFlairActServiceProvider) {
     this.loadPersistedData();
     this.loadActs();
     this.db = new loki('kuenstlerFavs');
@@ -39,9 +40,15 @@ export class KuenstlerPage {
     
   }
   loadActs(){
+    const loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+  
+    loading.present();
     this.actService.load().then(data => {
       this.preFilteredActs = data;
       this.acts = data;
+      loading.dismiss();
     });
   }
   isFav(kuenstler){

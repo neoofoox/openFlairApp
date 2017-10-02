@@ -10,13 +10,14 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'formatTimeHhmm',
 })
 export class FormatTimeHhmmPipe implements PipeTransform {
-  /**
-   * Takes a value and makes it lowercase.
-   */
   transform(value: string, ...args) {
     value = value + '';
     if(value.length >= 4){
-      return value.substring(0,2) + ":" + value.substring(2,4);
+      //TODO: do this with a regex.
+      let hours = parseInt(value.substring(0,2));
+      hours = hours >= 24 ? hours - 24 : hours;
+      let minutes = value.substring(2,4);
+      return (hours < 10 ? "0" + hours : hours) + ":" + minutes;
     } else {
       return value;
     }

@@ -18,6 +18,7 @@ export class ProgrammPage {
   //TODO: save gigs to local Storage & make option menü for manuall reloading.
   onlyFavorites: boolean = false;
   public acts: any;
+  tag: string;
   db: any;
   gigs: Gig[]= [];
   mittwoch: Gig[] = [];
@@ -27,7 +28,30 @@ export class ProgrammPage {
   sonntag: Gig[] = [];
   favs: any;
   constructor(public navCtrl: NavController, public actService: OpenFlairActServiceProvider) {
+    //TODO: change to current Weekday to test, and then to correct Date
+    let today = new Date();
+    let wochentag = today.getDay();
+    switch(wochentag){
+      case 1: //Montag
+      case 2: //Dienstag
+      case 3: //Mittwoch
+        this.tag = 'Mittwoch';
+        break;
+      case 4: //Donnerstag
+        this.tag = 'Donnerstag';
+        break;
+      case 5: //Freitag 
+        this.tag = 'Freitag';
+        break;
+      case 6: //Samstag
+        this.tag = 'Samstag';
+        break;
+      case 7: //Sonntag
+        this.tag = 'Sonntag';
+        break;
+    }
     this.loadGigs();
+    
   }
   loadGigs(){
     this.actService.load().then(data => {
@@ -40,15 +64,10 @@ export class ProgrammPage {
           let end = gig.end.integer_time;
           let weekday = gig.day_name;
           let stage = gig.stage_name;
-          let gigToAdd: Gig = new Gig();
           if ( begin != undefined && weekday != undefined 
             && stage != undefined && artist != undefined) {
             if(stage == "hr3 Bühne" || stage == "Seebühne" || stage == "Freibühne"){
-              gigToAdd.artist = artist;
-              gigToAdd.begin = begin;
-              gigToAdd.end = end;
-              gigToAdd.stage = stage;
-              gigToAdd.weekday = weekday;
+              let gigToAdd = new Gig(begin, end, artist, stage, weekday);
               this.gigs.push(gigToAdd);
               switch(weekday){
                 case "Mittwoch":
@@ -58,8 +77,7 @@ export class ProgrammPage {
                   this.donnerstag.push(gigToAdd);
                   break;
                 case "Freitag":
-                  
-                    this.freitag.push(gigToAdd);
+                  this.freitag.push(gigToAdd);
                   break;
                 case "Samstag":
                   this.samstag.push(gigToAdd);
@@ -112,19 +130,19 @@ export class ProgrammPage {
 
 
 class Gig {
-  begin: string = "";
-  end: string = "";
+  begin: number;
+  start: number;
+  end: number;
   artist: string = "";
   stage: string = "";
   weekday: string = "";
 
-  public Gig(begin:string, end:string, artist:string, stage:string, weekday: string){
+  constructor(begin : number, end : number, artist:string, stage:string, weekday: string){
     this.begin = begin;
-    this.end = end;
+    //this.start = begin >= 2400 ? begin - 2400 : begin;
+    this.end = end; //>= 2400 ? end - 2400 : end;
     this.artist = artist;
     this.stage = stage;
     this.weekday = weekday;
   }
-  
-
 }

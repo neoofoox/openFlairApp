@@ -139,8 +139,7 @@ class Gig {
 
   constructor(begin : number, end : number, artist:string, stage:string, weekday: string){
     this.begin = begin;
-    //this.start = begin >= 2400 ? begin - 2400 : begin;
-    this.end = end; //>= 2400 ? end - 2400 : end;
+    this.end = end;
     this.artist = artist;
     this.stage = stage;
     this.weekday = weekday;

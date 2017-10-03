@@ -1,0 +1,21 @@
+export const MONTAG = 1;
+export const DIENSTAG = 2;
+export const MITTWOCh = 3;
+export const DONNERSTAG = 4;
+export const FREITAG = 5;
+export const SAMSTAG = 6;
+export const SONNTAG = 7;
+
+export const STAGE_HR3 = "hr3 Bühne";
+export const STAGE_FREI = "Freibühne";
+export const STAGE_SEE = "Seebühne";
+export const STAGE_E_WERK = "E-Werk";
+export const STAGE_ELEKTROGARTEN = "Elektrogarten";
+export const STAGE_HOF = "Hofbühne";
+export const STAGE_INNENSTADT = "Innenstadt";
+export const STAGE_KLEINKUNSTZELT = "Kleinkunstzelt";
+export const STAGE_OF_SPIELFELD = "OF-Spielfeld";
+export const STAGE_SCHLOSSPARK = "Schlossparkbühne";
+export const STAGE_WALD = "Waldbühne";
+export const STAGE_WEINZELT = "Weinzelt";
+export const WALKACT = "Walkacts";

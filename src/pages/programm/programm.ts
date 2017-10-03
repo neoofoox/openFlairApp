@@ -1,21 +1,27 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import * as Const from '../../app/constants';
 import { OpenFlairActServiceProvider } from '../../providers/open-flair-act-service/open-flair-act-service';
+import Gig from './gig';
 
 /**
  * Generated class for the ProgrammPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
+ * TODO: Toggle Options: Favorites, Stages. 
+ * TODO: Schönere Farben finden.
+ * TODO: Schöner gestalten. Timeline eher beachten. Termine überlappen sich, sind unterschiedlich lang. etc.
+ * TODO: Programm persistieren und option zum manuellen refresh hinzufügen. 
+ * TODO: Farbe des Segements anpassen. Müsste OF Rot werden.
  */
 
 @Component({
   selector: 'page-programm',
   templateUrl: 'programm.html',
 })
+
 export class ProgrammPage {
-  //TODO: toogle Favorites.
-  //TODO: save gigs to local Storage & make option menü for manuall reloading.
   onlyFavorites: boolean = false;
   public acts: any;
   tag: string;
@@ -28,31 +34,30 @@ export class ProgrammPage {
   sonntag: Gig[] = [];
   favs: any;
   constructor(public navCtrl: NavController, public actService: OpenFlairActServiceProvider) {
-    //TODO: change to current Weekday to test, and then to correct Date
     let today = new Date();
     let wochentag = today.getDay();
     switch(wochentag){
-      case 1: //Montag
-      case 2: //Dienstag
-      case 3: //Mittwoch
+      case Const.MONTAG:
+      case Const.DIENSTAG:
+      case Const.MITTWOCh:
         this.tag = 'Mittwoch';
         break;
-      case 4: //Donnerstag
+      case Const.DONNERSTAG:
         this.tag = 'Donnerstag';
         break;
-      case 5: //Freitag 
+      case Const.FREITAG:
         this.tag = 'Freitag';
         break;
-      case 6: //Samstag
+      case Const.SAMSTAG:
         this.tag = 'Samstag';
         break;
-      case 7: //Sonntag
+      case Const.SONNTAG:
         this.tag = 'Sonntag';
         break;
     }
     this.loadGigs();
-    
   }
+
   loadGigs(){
     this.actService.load().then(data => {
       this.acts = data;
@@ -96,52 +101,33 @@ export class ProgrammPage {
         this.sonntag.sort(this.compare);
       });
     });
-    
   }
+
   compare(a,b) {
     return (a.begin > b.begin) ? 1 : ((b.begin > a.begin) ? -1 : 0);
   }
 
   stageColor(stage){
     switch(stage){
-      case "Seebühne":
+      case Const.STAGE_SEE:
         return "stageSeebuehne";
-      case "hr3 Bühne":
+      case Const.STAGE_HR3:
         return "stageHr3";
-      case "Freibühne":
+      case Const.STAGE_FREI:
         return "stageFreibuehne";
-      // case "E-Werk":
-      // case "Elektrogarten":
-      // case "Hofbühne":
-      // case "Innenstadt":
-      // case "Kleinkunstzelt":
-      // case "OF-Spielfeld":
-      // case "Schlossparkbühne":
-      // case "Waldbühne":
-      // case "Walkacts":
-      // case "Weinzelt":
+      case Const.STAGE_E_WERK:
+      case Const.STAGE_ELEKTROGARTEN:
+      case Const.STAGE_HOF:
+      case Const.STAGE_INNENSTADT:
+      case Const.STAGE_KLEINKUNSTZELT:
+      case Const.STAGE_OF_SPIELFELD:
+      case Const.STAGE_SCHLOSSPARK:
+      case Const.STAGE_WALD:
+      case Const.WALKACT:
+      case Const.STAGE_WEINZELT:
       
       default:
         return "ofred";
     }
-  }
-
-}
-
-
-class Gig {
-  begin: number;
-  start: number;
-  end: number;
-  artist: string = "";
-  stage: string = "";
-  weekday: string = "";
-
-  constructor(begin : number, end : number, artist:string, stage:string, weekday: string){
-    this.begin = begin;
-    this.end = end;
-    this.artist = artist;
-    this.stage = stage;
-    this.weekday = weekday;
   }
 }

@@ -5,12 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>Künstler</ion-title>
-      <button ion-button color="ofred" clear (click)='filterFavs()'>
-        <ion-icon [name]="isFiltered() ? 'heart' : 'heart-outline'"></ion-icon>
-      </button>
-    
+  <ion-navbar color="primary">
+    <div class="container">
+      <button ion-button color="secondary" clear (click)='filterFavs()'>
+          <ion-icon [name]="isFiltered() ? 'heart' : 'heart-outline'"></ion-icon>
+        </button>
+        <ion-title>Künstler</ion-title>
+      </div>
   </ion-navbar>
 </ion-header>
 
@@ -19,7 +20,7 @@
     <ng-template ngFor let-element [ngForOf]="acts">
       <ion-card *ngIf="element.act.category == 1 && (!isFiltered() || isFav(element.act))">
         <div class="artist-image" *ngIf="element.act.image_attachment_urls[0] != undefined">
-          <img cache=true src="http://open-flair.de{{element.act.image_attachment_urls[0].medium}}" />
+          <img cache=true src="http://open-flair.de{{element.act.image_attachment_urls[0].large}}" />
         </div>
         <!-- FIXME: handle .tiff files e.g: No Faces -->
         <div class="artist-image" *ngIf="element.act.image_attachment_urls[0] == undefined">
@@ -47,7 +48,7 @@
           </ion-col>
           <ion-col>
             <a href="{{element.act.homepage}}">
-              <button ion-button icon-left clear small>
+              <button ion-button icon-left clear small class="right">
                 <ion-icon name="link"></ion-icon>
                 <div>Webseite</div>
               </button>

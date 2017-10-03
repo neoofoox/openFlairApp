@@ -1,5 +1,11 @@
 page-news {
+    ion-title {
+        text-align: center;
+    }
     newsTime{
         padding: 16px 13px;
+    }
+    .right {
+        float: right;
     }
 }

@@ -13,7 +13,6 @@ export class FormatTimeHhmmPipe implements PipeTransform {
   transform(value: string, ...args) {
     value = value + '';
     if(value.length >= 4){
-      //TODO: do this with a regex.
       let hours = parseInt(value.substring(0,2));
       hours = hours >= 24 ? hours - 24 : hours;
       let minutes = value.substring(2,4);

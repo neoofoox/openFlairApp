@@ -1,10 +1,14 @@
 page-programm {
+    ion-title{
+        text-align: center;
+    }
     .card {
         width: calc(100% - 50px);
         border-radius: 12px;
         padding-left: 3px; 
     }
     .cardTime {
+        margin-top: 2px;
         float:left; 
         width: 50px;
         .begin {

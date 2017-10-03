@@ -1,6 +1,9 @@
 page-faq {
+    ion-title{
+        text-align: center;
+    }
     .faqAnswer {
-        padding: 10px 0 0 15px;
+        padding-top: 10px;
         white-space: normal;
     }
 }

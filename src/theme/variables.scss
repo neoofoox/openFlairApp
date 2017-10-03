@@ -34,17 +34,28 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #96191f, //#488aff
+  secondary:  #231F20, //#32db64
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
   ofred:      #96191f,
   ofblack:    #231F20,
   gigsBackground: #eeeeee,
-  stageSeebuehne: #bb1212,
-  stageHr3: #12bb12,
-  stageFreibuehne: #1212bb
+  stageSeebuehne: rgb(84, 132, 237),
+  stageHr3: rgb(81, 183, 73),
+  stageFreibuehne: rgb(251, 215, 91),
+  stage1: rgb(70, 214, 219),
+  stage2: rgb(122, 231, 191),
+  stage3: rgb(164, 189, 252),
+  stage4: rgb(255, 184, 120),
+  stage5: rgb(255, 136, 124),
+  stage6: rgb(220, 33, 39),
+  stage7: rgb(219, 173, 255),
+  stage8: rgb(225, 225, 225),
+  stage9: rgb(255, 124, 244),
+  stage10: rgb(124, 255, 255),
+  stage11: rgb(255, 176, 124),
 );
 
 

@@ -13,7 +13,6 @@ import Gig from './gig';
  * TODO: Schönere Farben finden.
  * TODO: Schöner gestalten. Timeline eher beachten. Termine überlappen sich, sind unterschiedlich lang. etc.
  * TODO: Programm persistieren und option zum manuellen refresh hinzufügen. 
- * TODO: Farbe des Segements anpassen. Müsste OF Rot werden.
  */
 
 @Component({
@@ -71,26 +70,24 @@ export class ProgrammPage {
           let stage = gig.stage_name;
           if ( begin != undefined && weekday != undefined 
             && stage != undefined && artist != undefined) {
-            if(stage == "hr3 Bühne" || stage == "Seebühne" || stage == "Freibühne"){
-              let gigToAdd = new Gig(begin, end, artist, stage, weekday);
-              this.gigs.push(gigToAdd);
-              switch(weekday){
-                case "Mittwoch":
-                  this.mittwoch.push(gigToAdd);
-                  break;
-                case "Donnerstag":
-                  this.donnerstag.push(gigToAdd);
-                  break;
-                case "Freitag":
-                  this.freitag.push(gigToAdd);
-                  break;
-                case "Samstag":
-                  this.samstag.push(gigToAdd);
-                  break;
-                case "Sonntag":
-                  this.sonntag.push(gigToAdd);
-                  break;
-              }
+            let gigToAdd = new Gig(begin, end, artist, stage, weekday);
+            this.gigs.push(gigToAdd);
+            switch(weekday){
+              case "Mittwoch":
+                this.mittwoch.push(gigToAdd);
+                break;
+              case "Donnerstag":
+                this.donnerstag.push(gigToAdd);
+                break;
+              case "Freitag":
+                this.freitag.push(gigToAdd);
+                break;
+              case "Samstag":
+                this.samstag.push(gigToAdd);
+                break;
+              case "Sonntag":
+                this.sonntag.push(gigToAdd);
+                break;
             }
           }
         });
@@ -116,18 +113,27 @@ export class ProgrammPage {
       case Const.STAGE_FREI:
         return "stageFreibuehne";
       case Const.STAGE_E_WERK:
+        return "stage1";
       case Const.STAGE_ELEKTROGARTEN:
+        return "stage2";
       case Const.STAGE_HOF:
+        return "stage3";
       case Const.STAGE_INNENSTADT:
+        return "stage4";
       case Const.STAGE_KLEINKUNSTZELT:
+        return "stage5";
       case Const.STAGE_OF_SPIELFELD:
+        return "stage6";
       case Const.STAGE_SCHLOSSPARK:
+        return "stage7";
       case Const.STAGE_WALD:
+        return "stage8";
       case Const.WALKACT:
+        return "stage9";
       case Const.STAGE_WEINZELT:
-      
+        return "stage10";
       default:
-        return "ofred";
+        return "stage11";
     }
   }
 }

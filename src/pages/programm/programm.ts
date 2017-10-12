@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
+// import { ViewChild } from '@angular/core';
+// import { ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { PopoverController } from 'ionic-angular';
+import { FilterPopOverPage } from './filter-pop-over';
 import * as Const from '../../app/constants';
 import { OpenFlairActServiceProvider } from '../../providers/open-flair-act-service/open-flair-act-service';
 import Gig from './gig';
@@ -10,7 +14,6 @@ import Gig from './gig';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  * TODO: Toggle Options: Favorites, Stages. 
- * TODO: Schönere Farben finden.
  * TODO: Schöner gestalten. Timeline eher beachten. Termine überlappen sich, sind unterschiedlich lang. etc.
  * TODO: Programm persistieren und option zum manuellen refresh hinzufügen. 
  */
@@ -21,6 +24,9 @@ import Gig from './gig';
 })
 
 export class ProgrammPage {
+  // @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
+  // @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
+
   onlyFavorites: boolean = false;
   public acts: any;
   tag: string;
@@ -32,7 +38,7 @@ export class ProgrammPage {
   samstag: Gig[] = [];
   sonntag: Gig[] = [];
   favs: any;
-  constructor(public navCtrl: NavController, public actService: OpenFlairActServiceProvider) {
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public actService: OpenFlairActServiceProvider) {
     let today = new Date();
     let wochentag = today.getDay();
     switch(wochentag){
@@ -136,4 +142,14 @@ export class ProgrammPage {
         return "stage11";
     }
   }
+  presentPopover(ev) {
+        let popover = this.popoverCtrl.create(FilterPopOverPage, {
+            // contentEle: this.content.nativeElement,
+            // textEle: this.text.nativeElement
+          });
+
+        popover.present({
+          ev: ev
+        });
+      }
 }

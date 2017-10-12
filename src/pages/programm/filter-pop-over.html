@@ -1,0 +1,58 @@
+<ion-list>
+  <ion-item >
+    <ion-label>HR3 Bühne</ion-label>
+    <ion-checkbox (click)="selectStage('stageHr3')" color="stageHr3" [(ngModel)]="hr3checked"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Freibühne</ion-label>
+    <ion-checkbox (click)="selectStage('stageFreibuehne')" color="stageFreibuehne" ></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Seebühne</ion-label>
+    <ion-checkbox (click)="selectStage('stageSeebuehne')" color="stageSeebuehne" ></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>E-Werk</ion-label>
+    <ion-checkbox (click)="selectStage('stage1')" color="stage1" checked="isStageSelected('stage1')"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Elektrogarten</ion-label>
+    <ion-checkbox (click)="selectStage('stage2')" color="stage2" checked="isStageSelected('stage2')"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Hofbühne</ion-label>
+    <ion-checkbox (click)="selectStage('stage3')" color="stage3" checked="isStageSelected('stage3')"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Innenstadt</ion-label>
+    <ion-checkbox (click)="selectStage('stage4')" color="stage4" checked="isStageSelected('stage4')"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Kleinkunstzelt</ion-label>
+    <ion-checkbox (click)="selectStage('stage5')" color="stage5" checked="isStageSelected('stage5')"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>OF-Spielfeld</ion-label>
+    <ion-checkbox (click)="selectStage('stage6')" color="stage6" checked="isStageSelected('stage6')"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Schlossparkbühne</ion-label>
+    <ion-checkbox (click)="selectStage('stage7')" color="stage7" checked="isStageSelected('stage7')"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Waldbühne</ion-label>
+    <ion-checkbox (click)="selectStage('stage8')" color="stage8" checked="isStageSelected('stage8')"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Weinzelt</ion-label>
+    <ion-checkbox (click)="selectStage('stage10')" color="stage10" checked="isStageSelected('stage10')"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Walkacts</ion-label>
+    <ion-checkbox (click)="selectStage('stage9')" color="stage9" checked="isStageSelected('stage9')"></ion-checkbox>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-label>HR3 Bühne</ion-label>
+    <ion-checkbox (click)="filterStage('stageHr3')" color="stage11" disabled checked="activeFilter()"></ion-checkbox>
+  </ion-item> -->
+</ion-list>

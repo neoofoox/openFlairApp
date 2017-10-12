@@ -5,6 +5,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { KuenstlerPage } from '../pages/kuenstler/kuenstler';
+import { FilterPopOverPage } from '../pages/programm/filter-pop-over';
 import { ProgrammPage } from '../pages/programm/programm';
 import { FaqPage } from '../pages/faq/faq';
 import { NewsPage } from '../pages/news/news';
@@ -23,6 +24,7 @@ import { OpenFlairFaqServiceProvider } from '../providers/open-flair-faq-service
   declarations: [
     MyApp,
     FaqPage,
+    FilterPopOverPage,
     ProgrammPage,
     KuenstlerPage,
     NewsPage,
@@ -40,6 +42,7 @@ import { OpenFlairFaqServiceProvider } from '../providers/open-flair-faq-service
   entryComponents: [
     MyApp,
     FaqPage,
+    FilterPopOverPage,
     ProgrammPage,
     KuenstlerPage,
     NewsPage,

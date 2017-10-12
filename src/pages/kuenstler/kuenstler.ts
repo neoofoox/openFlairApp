@@ -8,6 +8,9 @@ import { OpenFlairActServiceProvider } from '../../providers/open-flair-act-serv
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
+ * TODO: Filtern/EinAusblenden der Künstler nach Kategorie.
+ * TODO: Künstler persistieren mit Option diese Manuell zu aktualisieren (eventuell durch nach unten schieben.)
+ * TODO: Bei Besuch der Webseite den Default Browser öffnen oder Zurückbutton einfügen. 
  */
 declare var require: any;
 var loki = require('lokijs');
@@ -23,27 +26,27 @@ export class KuenstlerPage {
   public preFilteredActs: any;
   db: any;
   favs: any;
-  
+
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public actService: OpenFlairActServiceProvider) {
     this.loadPersistedData();
     this.loadActs();
     this.db = new loki('kuenstlerFavs');
-    this.favs = this.db.addCollection('favs');    
+    this.favs = this.db.addCollection('favs');
   }
-  toggleFav(kuenstler){
-    if(this.isFav(kuenstler)){
-      this.favs.findAndRemove({id: kuenstler.id, name: kuenstler.name});
+  toggleFav(kuenstler) {
+    if (this.isFav(kuenstler)) {
+      this.favs.findAndRemove({ id: kuenstler.id, name: kuenstler.name });
     } else {
-      this.favs.insert({id: kuenstler.id, name: kuenstler.name});
+      this.favs.insert({ id: kuenstler.id, name: kuenstler.name });
     }
     this.persistData();
-    
+
   }
-  loadActs(){
+  loadActs() {
     const loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
-  
+
     loading.present();
     this.actService.load().then(data => {
       this.preFilteredActs = data;
@@ -51,43 +54,44 @@ export class KuenstlerPage {
       loading.dismiss();
     });
   }
-  isFav(kuenstler){
-    return this.favs.find({id: kuenstler.id, name: kuenstler.name}).length > 0;
+  isFav(kuenstler) {
+    return this.favs.find({ id: kuenstler.id, name: kuenstler.name }).length > 0;
   }
 
-  isFiltered(){
+  isFiltered() {
     return this.onlyFavorites;
   }
 
-  filterFavs(){
-    if(this.onlyFavorites){
+  filterFavs() {
+    if (this.onlyFavorites) {
       this.onlyFavorites = false;
     } else {
       this.onlyFavorites = true;
     }
   }
-  persistData(){
+  persistData() {
     localforage.setItem('kuenstlerFavs', JSON.stringify(this.db)).then(function (value) {
       //Speichern erfolgreich
-    }).catch(function(err) {
-      //Fehler beim Speichern
+    }).catch(function (err) {
+      console.log("Fehler beim Speichern der Favoriten");
+
     });
   }
-  loadPersistedData(){
+  loadPersistedData() {
     var me = this;
-    localforage.getItem('kuenstlerFavs').then(function(value) {
+    localforage.getItem('kuenstlerFavs').then(function (value) {
       console.log('the full database has been retrieved');
       me.db.loadJSON(value);
       me.favs = me.db.getCollection('favs');
-    }).catch(function(err){
-      //Fehler beim laden der Daten
+    }).catch(function (err) {
+      console.log("Fehler beim Laden der Favoriten")
     });
   }
   convert2Array(val) {
     return Array.from(val);
   }
-  stageColor(gig){
-    switch(gig.stage_name){
+  stageColor(gig) {
+    switch (gig.stage_name) {
       case "Seebühne":
         return "stageSeebuehne";
       case "hr3 Bühne":
@@ -104,14 +108,14 @@ export class KuenstlerPage {
       case "Waldbühne":
       case "Walkacts":
       case "Weinzelt":
-      
+
       default:
-      return "ofred";
+        return "ofred";
     }
   }
-  searchKuenstler(ev: any){
+  searchKuenstler(ev: any) {
     let val = ev.target.value;
-    if(val && val.trim != ''){
+    if (val && val.trim != '') {
       this.acts = this.preFilteredActs.filter((act) => {
         return (act.act.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })

@@ -6,6 +6,7 @@ import { OpenFlairNewsServiceProvider } from '../../providers/open-flair-news-se
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
+ * TODO: Weiterlesen/Links in Default Browser öffnen.
  */
 
 @Component({
